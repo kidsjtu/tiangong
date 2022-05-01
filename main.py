@@ -2,9 +2,9 @@ from scene import Scene
 import taichi as ti
 from taichi.math import *
 
-scene = Scene(voxel_edges=0.1, exposure=1)
+scene = Scene(voxel_edges=0.05, exposure=0.3)
 scene.set_floor(-63, (1.0,1.0,1.0))
-scene.set_background_color((0.01, 0.01, 0.05)) # 天空颜色
+scene.set_background_color((0.1, 0.1, 0.2)) # 天空颜色
 scene.set_directional_light((1, 1, -1), 0.2, (0.8, 0.8, 1))
 
 @ti.func
@@ -43,7 +43,7 @@ def initialize_voxels():
     create_box(vec3(30, 0, -4), vec3(1, 1, 9), vec3(1,1,0.2))
     create_box(vec3(-10, 0, -4), vec3(1, 1, 9), vec3(1,1,0.2))
     create_box(vec3(10, 0, -4), vec3(1, 1, 9), vec3(1,1,0.2))
-
+    create_box(vec3(-55, 0, -18), vec3(110, 1, 1), vec3(0.2,0.2,0.2))
     # solar array
     create_box(vec3(-62, 10, -18), vec3(6, 50, 1), vec3(0.2, 0.2, 1))
     create_box(vec3(-53, 10, -18), vec3(6, 50, 1), vec3(0.2, 0.2, 1))
